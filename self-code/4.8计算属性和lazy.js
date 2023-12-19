@@ -152,7 +152,7 @@ function computed(getter) {
   
   const effectFn = effect(getter, {
     lazy: true,
-    scheduler(a) {
+    scheduler() {
       if (!dirty) {
         dirty = true
         trigger(obj, 'value')
